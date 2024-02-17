@@ -11,7 +11,9 @@
 3. **修改主题后保存状态并重建activity**
 4. **activity重启后通过保存的状态执行动画**
 
-博客：[https://blog.csdn.net/qq_45925230/article/details/136126818](https://blog.csdn.net/qq_45925230/article/details/136126818)
+博客：
+[稀土掘金](https://juejin.cn/post/7335959102487003186)
+[CSDN](https://blog.csdn.net/qq_45925230/article/details/136126818)
 
 实现效果：
 
