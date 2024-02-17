@@ -15,4 +15,4 @@
 
 实现效果：
 
-![效果图](screenshot/Activity%20recreate%20transition.gif)
+![效果图](screenshot/ActivityRecreateTransition.gif)
