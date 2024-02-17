@@ -75,6 +75,7 @@ class MainActivity : BaseActivity(), Toolbar.OnMenuItemClickListener {
             var clipType = ClipImageView.ClipType.CIRCLE
             when (transitionData.type) {
                 TransitionType.ENTER -> {
+                    // 进入动画，裁切掉圆内的区域 圆由小变大
                     animator.setFloatValues(
                         0f,
                         hypot(ivTransition.width.toFloat(), ivTransition.height.toFloat())
@@ -83,11 +84,13 @@ class MainActivity : BaseActivity(), Toolbar.OnMenuItemClickListener {
                 }
 
                 TransitionType.EXIT -> {
+                    // 退出动画，裁切掉圆外的区域 圆由大变小
                     animator.setFloatValues(
                         hypot(
                             ivTransition.width.toFloat(),
                             ivTransition.height.toFloat()
-                        ), 0f
+                        ),
+                        0f
                     )
                     clipType = ClipImageView.ClipType.CIRCLE
                 }
@@ -96,11 +99,13 @@ class MainActivity : BaseActivity(), Toolbar.OnMenuItemClickListener {
                 resources.getInteger(android.R.integer.config_longAnimTime).toLong()
             animator.addListener(
                 onEnd = {
+                    // 动画结束后隐藏 ImageView
                     ivTransition.visibility = View.GONE
                 }
             )
             animator.addUpdateListener {
                 val radius = it.animatedValue as Float
+                // 更新裁切区域
                 ivTransition.clipCircle(
                     transitionData.centerX,
                     transitionData.centerY,
