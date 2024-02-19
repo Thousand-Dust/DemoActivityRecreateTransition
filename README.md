@@ -15,6 +15,8 @@
 [稀土掘金](https://juejin.cn/post/7335959102487003186)
 [CSDN](https://blog.csdn.net/qq_45925230/article/details/136126818)
 
+[Demo Apk](releases)
+
 实现效果：
 
 ![效果图](screenshot/ActivityRecreateTransition.gif)
